@@ -17,12 +17,15 @@ type Pages = {
   "/projects": {
     params: {};
   };
+  "/weather": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/projects";
+    page: "/" | "/projects" | "/weather";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -32,10 +35,15 @@ type RouteFiles = {
     id: "routes/projects";
     page: "/projects";
   };
+  "routes/weather.tsx": {
+    id: "routes/weather";
+    page: "/weather";
+  };
 };
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/home": typeof import("./app/routes/home.tsx");
   "routes/projects": typeof import("./app/routes/projects.tsx");
+  "routes/weather": typeof import("./app/routes/weather.tsx");
 };
